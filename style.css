@@ -1,0 +1,100 @@
+body {
+    background-color: #444;
+    font-family: cursive;
+    margin: 0;
+}
+
+/* Layout */
+.main {
+    display: flex;
+    margin: 30px;
+    gap: 20px;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.profile-section {
+    background-color: rgb(13, 168, 171);
+    color: white;
+    width: 25%;
+    padding: 20px;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    position: sticky; /* stays in place while scrolling */
+    top: 30px; /* margin offset */
+    height: fit-content;
+}
+
+/* Hover effect for each section in sidebar */
+.profile-section .contact,
+.profile-section .skills {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+}
+
+.profile-section .contact:hover,
+.profile-section .skills:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.02);
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.4);
+}
+
+/* Profile picture styling */
+.profilepic {
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    position: relative;
+    padding: 5px;
+}
+
+.profilepic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profiledescr h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Main Content Section */
+.details-section {
+    flex: 1;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    box-sizing: border-box;
+    max-height: calc(100vh - 60px); /* fits viewport */
+    overflow-y: auto; /* scroll effect */
+}
+
+/* Box shadow for every element in details-section */
+.details-section > * {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+}
+
+.details-section h2 {
+    border-bottom: 1px dotted rgb(0, 0, 0);
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.details-section ul {
+    list-style: disc;
+    padding-left: 20px;
+}

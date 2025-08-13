@@ -1,10 +1,13 @@
+/* ===== Base Page Style ===== */
 body {
-    background-color: #f4f4f4;
+    background-color: #0d0d0d; /* Dark background */
+    color: #f5f5f5; /* Light text */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
+/* ===== Layout ===== */
 .main {
     display: flex;
     margin: 20px;
@@ -12,15 +15,15 @@ body {
     gap: 20px;
 }
 
-/* Profile Section */
+/* ===== Sidebar / Profile Section ===== */
 .profile-section {
-    background-color: #ffffff;
-    color: #333;
+    background-color: #1a1a1a;
+    color: #f5f5f5;
     width: 25%;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
     box-sizing: border-box;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     position: sticky;
     top: 20px;
     height: fit-content;
@@ -30,21 +33,22 @@ body {
     width: 100%;
     border-radius: 50%;
     margin-bottom: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
 }
 
 .profiledescr h1 {
     font-size: 22px;
     margin: 5px 0;
+    font-weight: bold;
 }
 
 .profiledescr h2 {
-    font-size: 16px;
-    color: #777;
-    margin: 0 0 20px;
+    font-size: 14px;
+    color: #bbbbbb;
+    margin-bottom: 20px;
 }
 
-/* Navigation Menu */
+/* ===== Navigation Menu ===== */
 .nav-menu {
     display: flex;
     flex-direction: column;
@@ -52,62 +56,76 @@ body {
 }
 
 .nav-menu button {
-    padding: 10px;
-    background-color: #ffffff;
-    color: #333;
-    border: 1px solid #ddd;
+    padding: 12px;
+    background-color: #262626;
+    color: #f5f5f5;
+    border: none;
     border-radius: 6px;
     cursor: pointer;
     text-align: left;
     font-size: 14px;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
 }
 
 .nav-menu button:hover {
-    background-color: #f0f0f0;
-    transform: translateX(3px);
+    background-color: #333333;
+    transform: translateX(4px);
 }
 
-/* Main Content */
+/* ===== Main Content Section ===== */
 .details-section {
     flex: 1;
-    background-color: #ffffff;
-    color: #333;
+    background-color: #1a1a1a;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
     box-sizing: border-box;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     overflow-y: auto;
 }
 
+/* ===== Content Cards ===== */
 .details-section > div {
     margin-bottom: 30px;
     padding: 15px;
-    background-color: #ffffff;
+    background-color: #262626;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .details-section > div:hover {
-    transform: scale(1.01);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
 }
 
+/* ===== Headings & Text ===== */
 .details-section h2 {
-    border-bottom: 2px solid #eee;
+    border-bottom: 2px solid #333333;
     margin-bottom: 10px;
     padding-bottom: 5px;
     font-size: 18px;
+    color: #f5f5f5;
+}
+
+.details-section h3 {
+    margin-top: 0;
+    color: #cccccc;
 }
 
 .details-section ul {
     list-style: disc;
     padding-left: 20px;
-    margin: 0;
 }
 
-.details-section h3 {
-    margin-top: 0;
+/* ===== Scrollbar Styling ===== */
+.details-section::-webkit-scrollbar {
+    width: 8px;
+}
+.details-section::-webkit-scrollbar-thumb {
+    background: #444444;
+    border-radius: 4px;
+}
+.details-section::-webkit-scrollbar-thumb:hover {
+    background: #666666;
 }

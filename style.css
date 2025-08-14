@@ -1,18 +1,59 @@
 
 body {
     background-color: #0d0d0d;
-    color: #f5f5f5; 
-    font-family: Arial, sans-serif;
+    color: #f5f5f5;
+    font-family: cursive;
     margin: 0;
     padding: 0;
 }
-
 
 .main {
     display: flex;
     margin: 20px;
     min-height: 100vh;
     gap: 20px;
+}
+
+.glow-pointer {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.glow-pointer::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 0deg,
+        rgba(255, 255, 255, 1) 0deg,
+        rgba(255, 255, 255, 0) 40deg,
+        rgba(255, 255, 255, 0) 360deg
+    );
+    animation: border-pointer 4s linear infinite;
+    z-index: 0;
+}
+
+.glow-pointer::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: #262626;
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.glow-pointer * {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes border-pointer {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .profile-section {
@@ -26,6 +67,10 @@ body {
     position: sticky;
     top: 20px;
     height: fit-content;
+    border: 2px solid #616060;
+}
+.profile-section.glow-pointer::after {
+    background: #1a1a1a;
 }
 
 .profilepic img {
@@ -33,20 +78,23 @@ body {
     border-radius: 50%;
     margin-bottom: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    border: 2px solid #757474;
 }
 
 .profiledescr h1 {
     font-size: 22px;
     margin: 5px 0;
     font-weight: bold;
+    padding-bottom: 5px;
+    text-align: center;
 }
 
 .profiledescr h2 {
     font-size: 14px;
     color: #bbbbbb;
     margin-bottom: 20px;
+    text-align: center;
 }
-
 
 .nav-menu {
     display: flex;
@@ -55,13 +103,14 @@ body {
 }
 
 .nav-menu button {
+    border: 2px solid rgb(67, 66, 66);
+    font-family: cursive;
+    text-align: center;
     padding: 12px;
     background-color: #262626;
     color: #f5f5f5;
-    border: none;
     border-radius: 6px;
     cursor: pointer;
-    text-align: left;
     font-size: 14px;
     transition: all 0.3s ease;
     box-shadow: 0 2px 6px rgba(0,0,0,0.4);
@@ -72,7 +121,6 @@ body {
     transform: translateX(4px);
 }
 
-
 .details-section {
     flex: 1;
     background-color: #1a1a1a;
@@ -80,24 +128,60 @@ body {
     border-radius: 12px;
     box-sizing: border-box;
     box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-    overflow-y: auto;
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
 }
-
 
 .details-section > div {
-    margin-bottom: 30px;
-    padding: 15px;
-    background-color: #262626;
+    flex: 0 0 70%;
+    height: 90%;
+    background-color: transparent;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 15px;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+    position: relative;
+    overflow: hidden;
 }
 
+.details-section > div:hover::before,
+.details-section > div:hover::after {
+    content: '';
+}
 .details-section > div:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    animation: none;
 }
-
+.details-section > div:hover::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 0deg,
+        rgba(255, 255, 255, 1) 0deg,
+        rgba(255, 255, 255, 0) 40deg,
+        rgba(255, 255, 255, 0) 360deg
+    );
+    animation: border-pointer 4s linear infinite;
+    z-index: 0;
+}
+.details-section > div:hover::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: #262626;
+    border-radius: 8px;
+    z-index: 1;
+}
+.details-section > div * {
+    position: relative;
+    z-index: 2;
+}
 
 .details-section h2 {
     border-bottom: 2px solid #333333;
@@ -117,14 +201,15 @@ body {
     padding-left: 20px;
 }
 
-
 .details-section::-webkit-scrollbar {
-    width: 8px;
+    height: 8px;
 }
+
 .details-section::-webkit-scrollbar-thumb {
     background: #444444;
     border-radius: 4px;
 }
+
 .details-section::-webkit-scrollbar-thumb:hover {
     background: #666666;
 }

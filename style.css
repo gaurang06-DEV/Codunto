@@ -1,12 +1,13 @@
-
+/* Main background color for the whole page */
 body {
-    background-color: #0d0d0d;
-    color: #f5f5f5;
+    background-color: #ffffff; /* Change this for page background */
+    color: #000000; /* Default text color */
     font-family: cursive;
     margin: 0;
     padding: 0;
 }
 
+/* Main layout wrapper */
 .main {
     display: flex;
     margin: 20px;
@@ -14,12 +15,14 @@ body {
     gap: 20px;
 }
 
+/* Glow effect container */
 .glow-pointer {
     position: relative;
     border-radius: 8px;
     overflow: hidden;
 }
 
+/* Outer rotating border */
 .glow-pointer::before {
     content: '';
     position: absolute;
@@ -27,38 +30,43 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
+    /* Change the red color here for glow */
     background: conic-gradient(
         from 0deg,
-        rgba(255, 255, 255, 1) 0deg,
-        rgba(255, 255, 255, 0) 40deg,
-        rgba(255, 255, 255, 0) 360deg
+        rgba(255, 0, 0, 1) 0deg,
+        rgba(255, 0, 0, 0) 40deg,
+        rgba(255, 0, 0, 0) 360deg
     );
-    animation: border-pointer 4s linear infinite;
+    animation: border-pointer 5s linear infinite;
     z-index: 0;
 }
 
+/* Inner background inside glow */
 .glow-pointer::after {
     content: '';
     position: absolute;
     inset: 3px;
-    background: #262626;
+    background: #262626; /* Change this for inside card background */
     border-radius: 8px;
     z-index: 1;
 }
 
+/* Make sure content stays above the glow layers */
 .glow-pointer * {
     position: relative;
     z-index: 2;
 }
 
+/* Animation for glow rotation */
 @keyframes border-pointer {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
 
+/* Left profile section */
 .profile-section {
-    background-color: #1a1a1a;
-    color: #f5f5f5;
+    background-color: #e8dbdb; /* Change profile background color */
+    color: #000000; /* Profile text color */
     width: 25%;
     padding: 20px;
     border-radius: 12px;
@@ -67,20 +75,24 @@ body {
     position: sticky;
     top: 20px;
     height: fit-content;
-    border: 2px solid #616060;
-}
-.profile-section.glow-pointer::after {
-    background: #1a1a1a;
+    border: 2px solid #616060; /* Profile border color */
 }
 
+/* Profile section glow background */
+.profile-section.glow-pointer::after {
+    background: #1a1a1a; /* Change inside glow background for profile */
+}
+
+/* Profile image */
 .profilepic img {
     width: 100%;
     border-radius: 50%;
     margin-bottom: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.6);
-    border: 2px solid #757474;
+    border: 2px solid #757474; /* Change border color for profile image */
 }
 
+/* Profile name */
 .profiledescr h1 {
     font-size: 22px;
     margin: 5px 0;
@@ -89,26 +101,29 @@ body {
     text-align: center;
 }
 
+/* Profile subtitle */
 .profiledescr h2 {
     font-size: 14px;
-    color: #bbbbbb;
+    color: #313131;
     margin-bottom: 20px;
     text-align: center;
 }
 
+/* Navigation menu styling */
 .nav-menu {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
+/* Navigation buttons */
 .nav-menu button {
     border: 2px solid rgb(67, 66, 66);
     font-family: cursive;
     text-align: center;
     padding: 12px;
-    background-color: #262626;
-    color: #f5f5f5;
+    background-color: #ffffff; /* Change button background */
+    color: #000000; /* Change button text */
     border-radius: 6px;
     cursor: pointer;
     font-size: 14px;
@@ -116,14 +131,18 @@ body {
     box-shadow: 0 2px 6px rgba(0,0,0,0.4);
 }
 
+/* Button hover effect */
 .nav-menu button:hover {
-    background-color: #333333;
+    background-color: #c0a3a3; /* Change button hover background */
+    color: #ffffff; /* Change button hover text */
     transform: translateX(4px);
 }
 
+/* Main details section */
 .details-section {
     flex: 1;
-    background-color: #1a1a1a;
+    border: 2px solid #616060; /* Change main section border */
+    background-color: #c0a3a3; /* Change main section background */
     padding: 20px;
     border-radius: 12px;
     box-sizing: border-box;
@@ -135,6 +154,7 @@ body {
     scroll-snap-type: x mandatory;
 }
 
+/* Each content card in details section */
 .details-section > div {
     flex: 0 0 70%;
     height: 90%;
@@ -147,13 +167,7 @@ body {
     overflow: hidden;
 }
 
-.details-section > div:hover::before,
-.details-section > div:hover::after {
-    content: '';
-}
-.details-section > div:hover {
-    animation: none;
-}
+/* Hover glow on content card */
 .details-section > div:hover::before {
     content: '';
     position: absolute;
@@ -161,46 +175,54 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
+    /* Change glow hover color here */
     background: conic-gradient(
         from 0deg,
-        rgba(255, 255, 255, 1) 0deg,
-        rgba(255, 255, 255, 0) 40deg,
-        rgba(255, 255, 255, 0) 360deg
+        rgba(255, 0, 0, 1) 0deg,
+        rgba(255, 0, 0, 0) 40deg,
+        rgba(255, 0, 0, 0) 360deg
     );
     animation: border-pointer 4s linear infinite;
     z-index: 0;
 }
+
+/* Inside background after hover glow */
 .details-section > div:hover::after {
     content: '';
     position: absolute;
     inset: 3px;
-    background: #262626;
+    background: #ffffff; /* Change hover inside background */
     border-radius: 8px;
     z-index: 1;
 }
+
+/* Text above glow */
 .details-section > div * {
     position: relative;
     z-index: 2;
 }
 
+/* Headings in detail section */
 .details-section h2 {
     border-bottom: 2px solid #333333;
     margin-bottom: 10px;
     padding-bottom: 5px;
     font-size: 18px;
-    color: #f5f5f5;
+    color: #000000;
 }
 
 .details-section h3 {
     margin-top: 0;
-    color: #cccccc;
+    color: #333333;
 }
 
+/* Lists */
 .details-section ul {
     list-style: disc;
     padding-left: 20px;
 }
 
+/* Scrollbar styles */
 .details-section::-webkit-scrollbar {
     height: 8px;
 }

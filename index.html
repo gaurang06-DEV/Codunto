@@ -4,35 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume - Gaurang Gaude</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="#">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+    </style>
 </head>
-<body>
-    <main class="main">
-        
-        <div class="profile-section">
-            <div class="profilepic">
-                <img src="images/dev.jpeg.jpg" alt="Portrait of Gaurang Gaude">
+<body class="bg-gray-100">
+    <main class="main container mx-auto px-4 py-10 flex flex-col lg:flex-row gap-8">
+        <div class="profile-section bg-white shadow-lg rounded-2xl p-6 w-full max-w-sm mx-auto lg:mx-0 lg:sticky lg:top-6 h-fit">
+            <div class="profilepic w-32 h-32 mx-auto rounded-full overflow-hidden shadow-md">
+                <img src="images/dev.jpeg.jpg" alt="Portrait of Gaurang Gaude" class="w-full h-full object-cover">
             </div>
-            <div class="profiledescr">
-                <h1>Gaurang Gaude</h1>
-                <h2>Student Trainee</h2>
+            <div class="profiledescr mt-4 text-center">
+                <h1 class="text-2xl font-bold text-gray-800">Gaurang Gaude</h1>
+                <h2 class="text-lg text-gray-500">Student Trainee</h2>
             </div>
 
-            <div class="nav-menu">
-                <button section="about">About</button>
-                <button section="education">Education</button>
-                <button section="internships">Internships</button>
-                <button section="skills">Skills</button>
-                <button section="courses">Courses</button>
+            <div class="nav-menu mt-6 flex flex-col gap-2">
+                <button section="about" class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">About</button>
+                <button section="education" class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Education</button>
+                <button section="internships" class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Internships</button>
+                <button section="skills" class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Skills</button>
+                <button section="courses" class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Courses</button>
             </div>
         </div>
 
-        <div class="details-section">
-            
-            <div class="about">
-                <h2>About</h2>
-                <p>
+        <div class="details-section flex-1 space-y-10">          
+            <div id="about" class=" bg-white p-6 rounded-2xl shadow-md">
+                <h2 class="text-xl font-semibold text-gray-800 border-b pb-2 mb-3">About</h2>
+                <p class="text-gray-600 leading-relaxed">
                     I am a final-year BCA student with a strong passion for web development, JavaScript, and problem-solving. 
                     My interests span across modern programming concepts such as Agile methodologies and Object-Oriented Programming (OOP). 
                     I enjoy building interactive and practical projects, including a sports-themed gaming website, and constantly strive to improve my skills in full-stack development. 
@@ -40,27 +42,32 @@
                 </p>
             </div>
 
-            <div class="education">
-                <h2>Education</h2>
-                <h4>BCA - Bachelor of Computer Applications</h4>
-                <p><strong>Institution:</strong> GVMs GGPR College Of Commerce & Economics</p>
-                <p><strong>Duration:</strong> 2023 – 2026</p>
-                <p><strong>Focus Areas:</strong> Web Development, Programming Languages, Database Management, Agile & OOP</p>
-                
-                <h4>Higher Secondary</h4>
-                <p><strong>Institution:</strong> P.E.S.S.R.S.N. College, Farmagudi, Goa</p>
-                <p><strong>Duration:</strong> 2020 – 2022</p>
-                <p><strong>Stream:</strong> Science (with Computer Science)</p>
+            <div id = "education" class="bg-white p-6 rounded-2xl shadow-md">
+                <h2 class="text-xl font-semibold text-gray-800 border-b pb-2 mb-3">Education</h2>
+
+                <div class="mb-5">
+                    <h4 class="text-lg font-medium text-gray-700">BCA - Bachelor of Computer Applications</h4>
+                    <p><strong>Institution:</strong> GVMs GGPR College Of Commerce & Economics</p>
+                    <p><strong>Duration:</strong> 2023 – 2026</p>
+                    <p><strong>Focus Areas:</strong> Web Development, Programming Languages, Database Management, Agile & OOP</p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-medium text-gray-700">Higher Secondary</h4>
+                    <p><strong>Institution:</strong> P.E.S.S.R.S.N. College, Farmagudi, Goa</p>
+                    <p><strong>Duration:</strong> 2020 – 2022</p>
+                    <p><strong>Stream:</strong> Science (with Computer Science)</p>
+                </div>
             </div>
 
-            <div class="internships">
-                <h2>Internships</h2>
-                <h4>Lenovo Leap Internship in Web development</h4>
-                <p>Participated in the Lenovo Leap Internship program, focusing on web development projects using modern technologies.</p>
+            <div id="internships" class="bg-white p-6 rounded-2xl shadow-md">
+                <h2 class="text-xl font-semibold text-gray-800 border-b pb-2 mb-3">Internships</h2>
+                <h4 class="text-lg font-medium text-gray-700">Lenovo Leap Internship in Web development</h4>
+                <p class="text-gray-600">Participated in the Lenovo Leap Internship program, focusing on web development projects using modern technologies.</p>
             </div>
 
-            <div class="skills">
-                <h2>Skills</h2>
+            <div id="skills" class="bg-white p-6 rounded-2xl shadow-md">
+                <h2 class="text-xl font-semibold text-gray-800 border-b pb-2 mb-3">Skills</h2>
                 <div class="soft-skills">
                     <h3>Soft Skills</h3>
                     <ul>

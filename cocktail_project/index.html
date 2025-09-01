@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cocktail Finder</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="container">
-        <div class="search-section">
-            <input type="text" id="user-input" placeholder="search for a cocktail..."  value="capaccino"/>
-            <button id="search-btn">Search</button>
-        </div>
-        <div id="result"></div>
+<body class="bg-gradient-to-br from-indigo-100 to-purple-200 min-h-screen flex items-center justify-center font-sans">
+  <div class="container max-w-xl bg-white shadow-xl rounded-2xl p-6">
+    <div class="search-section flex gap-2 mb-6">
+      <input 
+        type="text" 
+        id="user-input" 
+        placeholder="Search for a cocktail..."  
+        value="capaccino"
+        class="w-full px-4 py-2 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
+      />
+      <button 
+        id="search-btn" 
+        class="px-6 py-2 bg-purple-500 text-white font-medium rounded-xl hover:bg-purple-600 transition"
+      >
+        Search
+      </button>
     </div>
-    <script src="script.js"></script>
+
+    <div id="result" class="space-y-4 text-center">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

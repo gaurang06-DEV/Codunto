@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import BillSplitter from "./components/BillSplitter";
-import AssignItems from "./components/AssignItem";
-import FinalSummary from "./components/FinalSummary";
+import Main from "./components/main";
+import AddManually from "./components/AddManually";
+import ScanRecipt from "./components/ScanRecipt";
 import "./output.css";
 import { BrowserRouter,Routes,Route} from "react-router";
 
@@ -10,9 +10,10 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<BillSplitter />} />
-          <Route path="/assign-items" element={<AssignItems />} />
-          <Route path="/summary" element={<FinalSummary />} />
+          <Route path="/" element={<Main />} />
+          <Route path="/manually" element={<AddManually />} />
+          <Route path="/upload" element={<ScanRecipt />} />
+          
         </Routes>
       </BrowserRouter>
     </>
